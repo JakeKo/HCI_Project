@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<title>MyPLAN but better</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" type="text/css" media="screen" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" />
+		<link rel="stylesheet" type="text/css" media="screen" href="./index.css" />
+		
+	</head>
+	<body>
+		<div class="toolbar"> </div>
+		<div class="dashboard">
+			<div class="greeting">Welcome Student!</div>
+			<div class="notification">
+				<div class="notification-count">1</div>
+				<div class="notification-message">Upcoming Appointment: Elon Musk - 4:30 pm, March 16</div>
+			</div>
+			<div class="network">
+				<div class="network-title">Network</div>
+				<div class="network-search">
+					<div class="network-search-bar">
+						Search for people
+					</div>
+					<input class="advisor-filter" type="checkbox">Advisors
+					<input class="professor-filter" type="checkbox">Professors
+				</div>
+				<div class="network-list">
+					<div class="person-card"></div>
+					<div class="person-card"></div>
+					<div class="person-card"></div>
+					<div class="person-card"></div>
+					<div class="person-card"></div>
+					<div class="person-card"></div>
+					<div class="person-card"></div>
+					<div class="add-card"></div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<script src="./index.js"></script>
+</html>
