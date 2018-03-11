@@ -110,11 +110,16 @@ body {
 	justify-content: space-between;
 	align-items: center;
 	flex-grow: 1;
-	background: rgba(0, 0, 0, 0.025);
+	background: rgba(0, 0, 0, 0.05);
+	max-width: 750px;
+	color: grey;
 }
 
-.advisor-filter, .professor-filter {
-	margin: 0 16px 0 48px;
+.network-search-bar-field {
+	border: none;
+	outline: none;
+	background: transparent;
+	width: 95%;
 }
 
 .network-list {
@@ -176,4 +181,35 @@ body {
 	cursor: pointer;
 	font-weight: 700;
 	font-size: 14px;
+}
+
+.search-window {
+	margin-top: 16px;
+	background: rgba(0, 0, 0, 0.025);
+	min-height: 300px;
+	display: flex;
+	flex-direction: column;
+	display: none;
+}
+
+.filters {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	padding: 16px;
+	box-sizing: border-box;
+	background: rgba(0, 0, 0, 0.05);
+}
+
+.search-filter {
+	margin: 0 8px 0 32px;
+}
+
+.search-results {
+	position: relative;
+	flex-grow: 1;
+	display: flex;
+	flex-wrap: wrap;
+	padding: 32px;
+	box-sizing: border-box;
 }

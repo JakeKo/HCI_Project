@@ -7,7 +7,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" type="text/css" media="screen" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" />
 		<link rel="stylesheet" type="text/css" media="screen" href="./index.css" />
-		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
 	</head>
 	<body>
 		<div class="toolbar">
@@ -34,68 +34,25 @@
 				<div class="notification-count">1</div>
 				<div class="notification-message">Upcoming Appointment: Elon Musk - 4:30 pm, March 16</div>
 			</div>
+			<div class="network-search">
+				<div class="network-search-bar">
+					<input class="network-search-bar-field" type="text" placeholder="Search for people" />
+					<i class="material-icons">search</i>
+				</div>
+			</div>
 			<div class="network">
 				<div class="network-title">Network</div>
-				<div class="network-search">
-					<div class="network-search-bar">
-						Search for people
-						<i class="material-icons">search</i>
-					</div>
-					<input class="advisor-filter" type="checkbox">Advisors
-					<input class="professor-filter" type="checkbox">Professors
+				<div class="network-list"></div>
+			</div>
+			<div class="search-window">
+				<div class="filters">
+					Filters:
+					<input class="search-filter show-pinned" type="checkbox">Pinned
+					<input class="search-filter show-unpinned" type="checkbox">Unpinned
+					<input class="search-filter show-advisors" type="checkbox">Advisors
+					<input class="search-filter show-professors" type="checkbox">Professors
 				</div>
-				<div class="network-list">
-					<div class="person-card">
-						<div class="pin-toggle">
-							<i class="material-icons md-18">clear</i>
-						</div>
-						<div class="card-body">
-							<img class="card-portrait" src="./img/p3.jpeg">
-							<div class="card-title">Cindy Lou Who</div>
-						</div>
-						<div class="schedule-button">Schedule Appointment</div>
-					</div>
-					<div class="person-card">
-						<div class="pin-toggle">
-							<i class="material-icons md-18">clear</i>
-						</div>
-						<div class="card-body">
-							<img class="card-portrait" src="./img/p1.jpeg">
-							<div class="card-title">Sammy Lewis</div>
-						</div>
-						<div class="schedule-button">Schedule Appointment</div>
-					</div>
-					<div class="person-card">
-						<div class="pin-toggle">
-							<i class="material-icons md-18">clear</i>
-						</div>
-						<div class="card-body">
-							<img class="card-portrait" src="./img/p2.jpeg">
-							<div class="card-title">Ichabod Crane</div>
-						</div>
-						<div class="schedule-button">Schedule Appointment</div>
-					</div>
-					<div class="person-card">
-						<div class="pin-toggle">
-							<i class="material-icons md-18">clear</i>
-						</div>
-						<div class="card-body">
-							<img class="card-portrait" src="./img/p5.jpeg">
-							<div class="card-title">Nikola Tesla</div>
-						</div>
-						<div class="schedule-button">Schedule Appointment</div>
-					</div>
-					<div class="person-card">
-						<div class="pin-toggle">
-							<i class="material-icons md-18">clear</i>
-						</div>
-						<div class="card-body">
-							<img class="card-portrait" src="./img/p4.jpeg">
-							<div class="card-title">Elizabeth Ann Seaton</div>
-						</div>
-						<div class="schedule-button">Schedule Appointment</div>
-					</div>
-				</div>
+				<div class="search-results"></div>
 			</div>
 		</div>
 	</body>
