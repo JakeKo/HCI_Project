@@ -7,10 +7,27 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" type="text/css" media="screen" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" />
 		<link rel="stylesheet" type="text/css" media="screen" href="./index.css" />
-		
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	</head>
 	<body>
-		<div class="toolbar"> </div>
+		<div class="toolbar">
+			<div>
+				<div class="toolbar-icon" onclick="window.location.href = '#'">
+					<i class="material-icons md-36">dashboard</i>
+					<div class="toolbar-icon-label">Dashboard</div>
+				</div>
+				<div class="toolbar-icon">
+					<i class="material-icons md-36">build</i>
+					<div class="toolbar-icon-label">Services</div>
+				</div>
+			</div>
+			<div>
+				<div class="toolbar-icon">
+					<i class="material-icons md-36">settings</i>
+					<div class="toolbar-icon-label">Settings</div>
+				</div>
+			</div>
+		</div>
 		<div class="dashboard">
 			<div class="greeting">Welcome Student!</div>
 			<div class="notification">
@@ -22,6 +39,7 @@
 				<div class="network-search">
 					<div class="network-search-bar">
 						Search for people
+						<i class="material-icons">search</i>
 					</div>
 					<input class="advisor-filter" type="checkbox">Advisors
 					<input class="professor-filter" type="checkbox">Professors

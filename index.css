@@ -1,3 +1,13 @@
+:root {
+	--unl-red: #D00000;
+	--unl-cream: #F5F1E7;
+}
+
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; }
+
 html, body {
 	height: 100vh;
 }
@@ -11,21 +21,41 @@ body {
 
 .toolbar {
 	height: 100%;
-	min-width: 48px;
-	background: purple;
+	width: 80px;
+	background: var(--unl-red);
+	display: flex;
+	flex-shrink: 0;
+	flex-direction: column;
+	justify-content: space-between;
+	box-sizing: border-box;
+	color: white;
+}
+
+.toolbar-icon {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin: 12px 0;
+	cursor: pointer;
+}
+
+.toolbar-icon-label {
+	font-size: 12px;
+	margin-top: 4px;
 }
 
 .dashboard {
 	height: 100%;
 	flex-grow: 1;
-	background: green;
+	background: var(--unl-cream);
 	overflow-y: scroll;
 	padding: 32px 64px;
 	box-sizing: border-box;
 }
 
 .greeting {
-	font-size: 48px;
+	font-size: 32px;
 }
 
 .notification {
@@ -41,7 +71,7 @@ body {
 	height: 18px;
 	width: 18px;
 	font-size: 12px;
-	background: red;
+	background: var(--unl-red);
 	border-radius: 50%;
 	color: white;
 	display: flex;
@@ -60,7 +90,7 @@ body {
 }
 
 .network-title {
-	font-size: 30px;
+	font-size: 20px;
 }
 
 .network-search {
