@@ -1,6 +1,8 @@
 :root {
 	--unl-red: #D00000;
 	--unl-cream: #F5F1E7;
+	--unl-grey: #C7C8CA;
+	--unl-lightcream: #FEFDFA;
 }
 
 .material-icons.md-18 { font-size: 18px; }
@@ -48,7 +50,7 @@ body {
 .dashboard {
 	height: 100%;
 	flex-grow: 1;
-	background: var(--unl-cream);
+	background: white;
 	overflow-y: scroll;
 	padding: 32px 64px;
 	box-sizing: border-box;
@@ -65,6 +67,7 @@ body {
 	display: flex;
 	justify-content: flex-start;
 	align-items: center;
+	box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
 }
 
 .notification-count {
@@ -107,6 +110,7 @@ body {
 	justify-content: space-between;
 	align-items: center;
 	flex-grow: 1;
+	background: rgba(0, 0, 0, 0.025);
 }
 
 .advisor-filter, .professor-filter {
@@ -120,8 +124,56 @@ body {
 }
 
 .person-card {
-	height: 300px;
-	width: 300px;
+	height: 240px;
+	width: 240px;
 	background: white;
 	margin: 0 32px 32px 0;
+	display: flex;
+	flex-direction: column;
+	border-radius: 8px;
+	position: relative;
+	box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
+	cursor: pointer;
+}
+
+.pin-toggle {
+	position: absolute;
+	top: 8px;
+	right: 8px;
+	color: var(--unl-grey);
+	display: none;
+}
+
+.card-body {
+	flex-grow: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.card-portrait {
+	border-radius: 50%;
+	height: 128px;
+	width: 128px;
+	object-fit: cover;
+}
+
+.card-title {
+	font-size: 18px;
+	margin: 8px 0 0 0;
+	font-weight: 300;
+}
+
+.schedule-button {
+	height: 48px;
+	background: var(--unl-red);
+	color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 0 0 8px 8px;
+	cursor: pointer;
+	font-weight: 700;
+	font-size: 14px;
 }
