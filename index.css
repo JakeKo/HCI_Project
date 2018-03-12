@@ -162,6 +162,11 @@ body {
 	font-size: 18px;
 }
 
+.network-title {
+	font-size: 20px;
+	margin-top: 48px;
+}
+
 .person-search {
 	margin-top: 16px;
 	display: flex;
@@ -188,11 +193,7 @@ body {
 }
 
 .network {
-	margin-top: 48px;
-}
-
-.network-title {
-	font-size: 20px;
+	margin-top: 16px;
 }
 
 .network-list {
@@ -257,12 +258,17 @@ body {
 }
 
 .search-window {
-	margin-top: 16px;
-	background: rgba(0, 0, 0, 0.025);
 	min-height: 300px;
-	display: flex;
 	flex-direction: column;
 	display: none;
+	position: relative;
+}
+
+.search-exit {
+	position: absolute;
+	top: 12px;
+	right: 12px;
+	cursor: pointer;
 }
 
 .filters {
@@ -271,7 +277,6 @@ body {
 	align-items: center;
 	padding: 16px;
 	box-sizing: border-box;
-	background: rgba(0, 0, 0, 0.05);
 }
 
 .search-filter {
@@ -280,9 +285,9 @@ body {
 
 .search-results {
 	position: relative;
+	margin-top: 32px;
 	flex-grow: 1;
 	display: flex;
 	flex-wrap: wrap;
-	padding: 32px;
 	box-sizing: border-box;
 }
