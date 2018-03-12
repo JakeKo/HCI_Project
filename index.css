@@ -21,6 +21,80 @@ body {
 	font-family: "Roboto";
 }
 
+.fullscreen-filter {
+	height: 100%;
+	width: 100%;
+	background: var(--unl-lightcream);
+	opacity: 0.75;
+	position: absolute;
+	z-index: 1;
+	cursor: pointer;
+	display: none;
+}
+
+.focus-card {
+	position: absolute;
+	height: 600px;
+	width: 400px;
+	background: white;
+	top: 50%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	z-index: 2;
+	display: flex;
+	flex-direction: column;
+	border-radius: 8px;
+	box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.25);
+	display: none;
+}
+
+.focus-pin-toggle {
+	position: absolute;
+	top: 8px;
+	right: 8px;
+	color: var(--unl-grey);
+	cursor: pointer;
+}
+
+.focus-card-body {
+	flex-grow: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.focus-card-portrait {
+	border-radius: 50%;
+	height: 256px;
+	width: 256px;
+	object-fit: cover;
+}
+
+.focus-card-title {
+	font-size: 28px;
+	margin: 12px 0;
+	font-weight: 300;
+}
+
+.focus-card-office-hours, .focus-card-email, .focus-card-phone {
+	margin-top: 4px;
+}
+
+.focus-schedule-button {
+	height: 64px;
+	background: var(--unl-red);
+	color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 0 0 8px 8px;
+	cursor: pointer;
+	font-weight: 700;
+	font-size: 14px;
+}
+
 .toolbar {
 	height: 100%;
 	width: 80px;
@@ -88,22 +162,14 @@ body {
 	font-size: 18px;
 }
 
-.network {
-	margin-top: 48px;
-}
-
-.network-title {
-	font-size: 20px;
-}
-
-.network-search {
+.person-search {
 	margin-top: 16px;
 	display: flex;
 	justify-content: flex-start;
 	align-items: center;
 }
 
-.network-search-bar {
+.person-search-bar {
 	background: white;
 	padding: 16px;
 	display: flex;
@@ -111,15 +177,22 @@ body {
 	align-items: center;
 	flex-grow: 1;
 	background: rgba(0, 0, 0, 0.05);
-	max-width: 750px;
 	color: grey;
 }
 
-.network-search-bar-field {
+.person-search-bar-field {
 	border: none;
 	outline: none;
 	background: transparent;
-	width: 95%;
+	width: calc(100% - 40px);
+}
+
+.network {
+	margin-top: 48px;
+}
+
+.network-title {
+	font-size: 20px;
 }
 
 .network-list {

@@ -10,6 +10,20 @@
 		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
 	</head>
 	<body>
+		<div class="fullscreen-filter"></div>
+		<div class="focus-card">
+			<div class="focus-pin-toggle">
+				<i class="material-icons md-24">add</i>
+			</div>
+			<div class="focus-card-body">
+				<img class="focus-card-portrait" />
+				<div class="focus-card-title"></div>
+				<div class="focus-card-office-hours"></div>
+				<div class="focus-card-email"></div>
+				<div class="focus-card-phone"></div>
+			</div>
+			<div class="focus-schedule-button" onclick="window.location.href='./Schedule/index.html'">SCHEDULE APPOINTMENT</div>
+		</div>
 		<div class="toolbar">
 			<div>
 				<div class="toolbar-icon" onclick="window.location.href = '#'">
@@ -34,9 +48,9 @@
 				<div class="notification-count">1</div>
 				<div class="notification-message">Upcoming Appointment: Elon Musk - 4:30 pm, March 16</div>
 			</div>
-			<div class="network-search">
-				<div class="network-search-bar">
-					<input class="network-search-bar-field" type="text" placeholder="Search for people" />
+			<div class="person-search">
+				<div class="person-search-bar">
+					<input class="person-search-bar-field" type="text" placeholder="Search for people" />
 					<i class="material-icons">search</i>
 				</div>
 			</div>
