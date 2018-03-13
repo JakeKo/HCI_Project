@@ -1,0 +1,293 @@
+:root {
+	--unl-red: #D00000;
+	--unl-cream: #F5F1E7;
+	--unl-grey: #C7C8CA;
+	--unl-lightcream: #FEFDFA;
+}
+
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; }
+
+html, body {
+	height: 100vh;
+}
+
+body {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	font-family: "Roboto";
+}
+
+.fullscreen-filter {
+	height: 100%;
+	width: 100%;
+	background: var(--unl-lightcream);
+	opacity: 0.75;
+	position: absolute;
+	z-index: 1;
+	cursor: pointer;
+	display: none;
+}
+
+.focus-card {
+	position: absolute;
+	height: 600px;
+	width: 400px;
+	background: white;
+	top: 50%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	z-index: 2;
+	display: flex;
+	flex-direction: column;
+	border-radius: 8px;
+	box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.25);
+	display: none;
+}
+
+.focus-pin-toggle {
+	position: absolute;
+	top: 8px;
+	right: 8px;
+	color: var(--unl-grey);
+	cursor: pointer;
+}
+
+.focus-card-body {
+	flex-grow: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.focus-card-portrait {
+	border-radius: 50%;
+	height: 256px;
+	width: 256px;
+	object-fit: cover;
+}
+
+.focus-card-title {
+	font-size: 28px;
+	margin: 12px 0;
+	font-weight: 300;
+}
+
+.focus-card-office-hours, .focus-card-email, .focus-card-phone {
+	margin-top: 4px;
+}
+
+.focus-schedule-button {
+	height: 64px;
+	background: var(--unl-red);
+	color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 0 0 8px 8px;
+	cursor: pointer;
+	font-weight: 700;
+	font-size: 14px;
+}
+
+.toolbar {
+	height: 100%;
+	width: 80px;
+	background: var(--unl-red);
+	display: flex;
+	flex-shrink: 0;
+	flex-direction: column;
+	justify-content: space-between;
+	box-sizing: border-box;
+	color: white;
+}
+
+.toolbar-icon {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin: 12px 0;
+	cursor: pointer;
+}
+
+.toolbar-icon-label {
+	font-size: 12px;
+	margin-top: 4px;
+}
+
+.dashboard {
+	height: 100%;
+	flex-grow: 1;
+	background: white;
+	overflow-y: scroll;
+	padding: 32px 64px;
+	box-sizing: border-box;
+}
+
+.greeting {
+	font-size: 32px;
+}
+
+.notification {
+	margin-top: 16px;
+	background: white;
+	padding: 16px;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
+}
+
+.notification-count {
+	height: 18px;
+	width: 18px;
+	font-size: 12px;
+	background: var(--unl-red);
+	border-radius: 50%;
+	color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-weight: 700;
+}
+
+.notification-message {
+	margin-left: 16px;
+	font-size: 18px;
+}
+
+.network-title {
+	font-size: 20px;
+	margin-top: 48px;
+}
+
+.person-search {
+	margin-top: 16px;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.person-search-bar {
+	background: white;
+	padding: 16px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-grow: 1;
+	background: rgba(0, 0, 0, 0.05);
+	color: grey;
+}
+
+.person-search-bar-field {
+	border: none;
+	outline: none;
+	background: transparent;
+	width: calc(100% - 40px);
+}
+
+.network {
+	margin-top: 16px;
+}
+
+.network-list {
+	margin-top: 32px;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.person-card {
+	height: 240px;
+	width: 240px;
+	background: white;
+	margin: 0 32px 32px 0;
+	display: flex;
+	flex-direction: column;
+	border-radius: 8px;
+	position: relative;
+	box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
+	cursor: pointer;
+}
+
+.pin-toggle {
+	position: absolute;
+	top: 8px;
+	right: 8px;
+	color: var(--unl-grey);
+	display: none;
+}
+
+.card-body {
+	flex-grow: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.card-portrait {
+	border-radius: 50%;
+	height: 128px;
+	width: 128px;
+	object-fit: cover;
+}
+
+.card-title {
+	font-size: 18px;
+	margin: 8px 0 0 0;
+	font-weight: 300;
+}
+
+.schedule-button {
+	height: 48px;
+	background: var(--unl-red);
+	color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 0 0 8px 8px;
+	cursor: pointer;
+	font-weight: 700;
+	font-size: 14px;
+}
+
+.search-window {
+	min-height: 300px;
+	flex-direction: column;
+	display: none;
+	position: relative;
+}
+
+.search-exit {
+	position: absolute;
+	top: 12px;
+	right: 12px;
+	cursor: pointer;
+}
+
+.filters {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	padding: 16px;
+	box-sizing: border-box;
+}
+
+.search-filter {
+	margin: 0 8px 0 32px;
+}
+
+.search-results {
+	position: relative;
+	margin-top: 32px;
+	flex-grow: 1;
+	display: flex;
+	flex-wrap: wrap;
+	box-sizing: border-box;
+}
