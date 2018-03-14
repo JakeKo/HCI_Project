@@ -31,6 +31,70 @@ body {
 	cursor: pointer;
 	display: none;
 }
+
+.focus-card {
+	position: absolute;
+	height: 600px;
+	width: 400px;
+	background: white;
+	top: 50%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	z-index: 2;
+	display: flex;
+	flex-direction: column;
+	border-radius: 8px;
+	box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.25);
+	display: none;
+}
+
+.focus-pin-toggle {
+	position: absolute;
+	top: 8px;
+	right: 8px;
+	color: var(--unl-grey);
+	cursor: pointer;
+}
+
+.focus-card-body {
+	flex-grow: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.focus-card-portrait {
+	border-radius: 50%;
+	height: 256px;
+	width: 256px;
+	object-fit: cover;
+}
+
+.focus-card-title {
+	font-size: 28px;
+	margin: 12px 0;
+	font-weight: 300;
+}
+
+.focus-card-office-hours, .focus-card-email, .focus-card-phone {
+	margin-top: 4px;
+}
+
+.focus-schedule-button {
+	height: 64px;
+	background: var(--unl-red);
+	color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 0 0 8px 8px;
+	cursor: pointer;
+	font-weight: 700;
+	font-size: 14px;
+}
+
 .toolbar {
 	height: 100%;
 	width: 80px;
@@ -70,70 +134,160 @@ body {
 	font-size: 32px;
 }
 
-.calendar {
+.notification {
+	margin-top: 16px;
+	background: white;
+	padding: 16px;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
+}
+
+.notification-count {
+	height: 18px;
+	width: 18px;
+	font-size: 12px;
+	background: var(--unl-red);
+	border-radius: 50%;
+	color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-weight: 700;
+}
+
+.notification-message {
+	margin-left: 16px;
+	font-size: 18px;
+}
+
+.network-title {
+	font-size: 20px;
+	margin-top: 48px;
+}
+
+.person-search {
+	margin-top: 16px;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.person-search-bar {
+	background: white;
+	padding: 16px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-grow: 1;
+	background: rgba(0, 0, 0, 0.05);
+	color: grey;
+}
+
+.person-search-bar-field {
+	border: none;
+	outline: none;
+	background: transparent;
+	width: calc(100% - 40px);
+}
+
+.network {
+	margin-top: 16px;
+}
+
+.network-list {
+	margin-top: 32px;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.person-card {
+	height: 240px;
+	width: 240px;
+	background: white;
+	margin: 0 32px 32px 0;
+	display: flex;
+	flex-direction: column;
+	border-radius: 8px;
+	position: relative;
+	box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
+	cursor: pointer;
+}
+
+.pin-toggle {
 	position: absolute;
-	text-align:center;
-    left: 25%;
-    top: 5%;
-	height: 80%;
-	width:70%;
+	top: 8px;
+	right: 8px;
+	color: var(--unl-grey);
+	display: none;
+}
+
+.card-body {
+	flex-grow: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.card-portrait {
+	border-radius: 50%;
+	height: 128px;
+	width: 128px;
+	object-fit: cover;
+}
+
+.card-title {
+	font-size: 18px;
+	margin: 8px 0 0 0;
+	font-weight: 300;
+}
+
+.schedule-button {
+	height: 48px;
 	background: var(--unl-red);
-}
-
-.time{
-	width:1%;
-	height:80%;
-	display: inline-block;
 	color: white;
-	vertical-align: top;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 0 0 8px 8px;
+	cursor: pointer;
+	font-weight: 700;
+	font-size: 14px;
 }
 
-.slot{
-	width:100%;
-	height:10%;
+.search-window {
+	min-height: 300px;
+	flex-direction: column;
+	display: none;
+	position: relative;
 }
 
-.day{
-	border: 4px solid white;
-	display: inline-block;
-	height:80%;
-	width:18%;
-	vertical-align: top;
-	color: white;
-	text-decoration: underline
+.search-exit {
+	position: absolute;
+	top: 12px;
+	right: 12px;
+	cursor: pointer;
 }
 
-.calendar-heading{
-	color: white;
+.filters {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	padding: 16px;
+	box-sizing: border-box;
 }
 
-.sidebar{
-	width:17%;
-	height:100%;
-	display: inline-block;
+.search-filter {
+	margin: 0 8px 0 32px;
 }
 
-.sidebar h1{
-	margin-left: 20px;
-}
-
-.sidebar h2{
-	margin-left: 20px;
-	margin-top: 100px;
-}
-
-.reason{
-	margin-left: 20px;
-	width:100%;
-	height:20%;
-	border: 1px solid black;
-}
-
-.scheduler{
-	width:75%;
-	background: var(--unl-red);
-	height:7%;
-	color:white;
-	margin-left:20px;
-	margin-top: 100px;
+.search-results {
+	position: relative;
+	margin-top: 32px;
+	flex-grow: 1;
+	display: flex;
+	flex-wrap: wrap;
+	box-sizing: border-box;
 }
