@@ -1,95 +1,91 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>MyPLAN but better</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" type="text/css" media="screen" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css"/>
-    <link rel="stylesheet" type="text/css" media="screen" href="./index.css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-    <link rel='stylesheet' type='text/css' href='http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/smoothness/jquery-ui.css'/>
-    <link rel='stylesheet' type='text/css' href='jquery.weekcalendar.css' />
-    <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js'></script>
-    <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/jquery-ui.min.js'></script>
-    <script src="./index.js"></script>
-    <script type='text/javascript'>
-        var year = new Date().getFullYear();
-        var month = new Date().getMonth();
-        var day = new Date().getDate();
-
-        var eventData = {
-            events: [
-                { "id": 1, "start": new Date(year, month, day, 12), "end": new Date(year, month, day, 13, 35), "title": "Office Hours" },
-                { "id": 2, "start": new Date(year, month, day, 14), "end": new Date(year, month, day, 14, 45), "title": "Office Hours" },
-                { "id": 3, "start": new Date(year, month, day + 1, 18), "end": new Date(year, month, day + 1, 18, 45), "title": "Advising" },
-                { "id": 4, "start": new Date(year, month, day - 1, 8), "end": new Date(year, month, day - 1, 9, 30), "title": "Office Hours" },
-                { "id": 5, "start": new Date(year, month, day + 1, 14), "end": new Date(year, month, day + 1, 15), "title": "Advising" },
-                { "id": 6, "start": new Date(year, month, day + 2, 12), "end": new Date(year, month, day + 2, 14), "title": "Advising" }
-
-            ]
-        };
-
-        $(document).ready(function () {
-            $('#calendar').weekCalendar({
-                timeslotsPerHour: 4,
-                height: function ($calendar) {
-                    return $(window).height() - $("h1").outerHeight();
-                },
-                eventRender: function (calEvent, $event) {
-                    if (calEvent.end.getTime() < new Date().getTime()) {
-                        $event.find(".wc-time").css({ "backgroundColor": "#555", "border": "1px solid #888" });
-                    }
-                },
-                eventNew: function (calEvent, $event) { },
-                eventDrop: function (calEvent, $event) { },
-                eventResize: function (calEvent, $event) { },
-                eventClick: function (calEvent, $event) {
-                    $('.wc-cal-event').css("backgroundColor", "#68a1e5")
-                    $event.css("backgroundColor", "#aaa");
-                },
-                noEvents: function () {
-                    displayMessage("There are no events for this week");
-                },
-                data: eventData
-            });
-
-            function displayMessage(message) {
-                $("#message").html(message).fadeIn();
-            }
-
-            $("<div id=\"message\" class=\"ui-corner-all\"></div>").prependTo($("body"));
-
-        });
-
-    </script>
-</head>
-
-
-<body>
-    <div class="fullscreen-filter"></div>
-    <div class="toolbar">
-        <div>
-            <div class="toolbar-icon" onclick="window.location.href = '#'">
-                <i class="material-icons md-36">dashboard</i>
-                <div class="toolbar-icon-label">Dashboard</div>
-            </div>
-            <div class="toolbar-icon">
-                <i class="material-icons md-36">build</i>
-                <div class="toolbar-icon-label">Services</div>
-            </div>
-        </div>
-        <div>
-            <div class="toolbar-icon">
-                <i class="material-icons md-36">settings</i>
-                <div class="toolbar-icon-label">Settings</div>
-            </div>
-        </div>
-    </div>
-    <div class="schedule" style="width:70%">
-        <div id='calendar'></div>
-    </div>
-</body>
-
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<title>OurPLAN</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" type="text/css" media="screen" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" />
+		<link rel="stylesheet" type="text/css" media="screen" href="./index.css" />
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+		<link href="dist/css/datepicker.min.css" rel="stylesheet" type="text/css">
+		<script src="index.js"></script>
+        <script src="dist/js/datepicker.min.js"></script>
+        <script src="dist/js/i18n/datepicker.en.js"></script>
+	</head>
+	<body>
+		<div class="toolbar">
+			<div>
+				<div class="toolbar-icon" onclick="window.location.href = '#'">
+					<i class="material-icons md-36">dashboard</i>
+					<div class="toolbar-icon-label">Dashboard</div>
+				</div>
+				<div class="toolbar-icon">
+					<i class="material-icons md-36">build</i>
+					<div class="toolbar-icon-label">Services</div>
+				</div>
+			</div>
+			<div>
+				<div class="toolbar-icon">
+					<i class="material-icons md-36">settings</i>
+					<div class="toolbar-icon-label">Settings</div>
+				</div>
+			</div>
+		</div>
+		<div class="sidebar">
+			<h1>Make an Appointment</h1>
+			<div class="datepicker"></div>
+			<h2>Reason for Appointment</h2>
+			<div class="reason" contenteditable="true"></div>
+			<button class="scheduler" onclick="window.location.href='../index.html'">Confirm Appointment</button>
+		</div>
+		<div class="calendar">
+			<h1 class="calendar-heading">Calendar for Cindy Lou Who (Week of March 12-16)</h1>
+			<p class="time"><br/><br/>9<br/><br/><br/><br/>10<br/><br/><br/><br/>11<br/><br/><br/><br/>12<br/><br/><br/><br/>1<br/><br/><br/><br/>2<br/><br/><br/><br/>3<br/><br/><br/><br/>4<br/><br/><br/><br/>5</p>
+			<div class="monday day">Monday<br/><br/>
+				<button class="slot">Sign up!</button>
+				<button class="slot">Sign up!</button>
+				<button class="slot">Sign up!</button>
+				<button class="slot">Sign up!</button>
+				<button class="slot">Sign up!</button>
+				<button class="slot">Sign up!</button>
+				<button class="slot">Sign up!</button>
+			</div>
+			<div class="tuesday day">Tuesday<br/><br/><br/><br/><br/><br/>
+				<button class="slot">Sign up!</button>
+				<button class="slot">Sign up!</button>
+				<button class="slot">Sign up!</button>
+				<button class="slot">Sign up!</button>
+				<button class="slot">Sign up!</button>
+				<button class="slot">Sign up!</button>
+				<button class="slot">Sign up!</button></div>
+			<div class="wednesday day">Wednesday<br/><br/><br/>
+				<button class="slot">Sign up!</button>
+				<button class="slot">Sign up!</button>
+				<button class="slot">Sign up!</button>
+				<button class="slot">Sign up!</button>
+				<button class="slot">Sign up!</button>
+				<button class="slot">Sign up!</button>
+				<button class="slot">Sign up!</button></div>
+			<div class="thursday day">Thursday<br/><br/><br/><br/><br/><br/><br/><br/>
+				<button class="slot">Sign up!</button>
+				<button class="slot">Sign up!</button>
+				<button class="slot">Sign up!</button>
+				<button class="slot">Sign up!</button>
+				<button class="slot">Sign up!</button>
+				<button class="slot">Sign up!</button>
+				<button class="slot">Sign up!</button></div>
+			<div class="friday day">Friday<br/><br/>
+				<button class="slot">Sign up!</button>
+				<button class="slot">Sign up!</button>
+				<button class="slot">Sign up!</button>
+				<button class="slot">Sign up!</button>
+				<button class="slot">Sign up!</button>
+				<button class="slot">Sign up!</button>
+				<button class="slot">Sign up!</button></div>
+			<p class="time"><br/><br/>9<br/><br/><br/><br/>10<br/><br/><br/><br/>11<br/><br/><br/><br/>12<br/><br/><br/><br/>1<br/><br/><br/><br/>2<br/><br/><br/><br/>3<br/><br/><br/><br/>4<br/><br/><br/><br/>5</p>
+		</div>
+	</body>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<script src="./index.js"></script>
 </html>
